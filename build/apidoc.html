@@ -61,12 +61,81 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.session.socket.io">module session.socket.io</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session.socket.io.io">
+            function <span class="apidocSignatureSpan">session.socket.</span>io
+            <span class="apidocSignatureSpan">(io, sessionStore, cookieParser, key)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.session.socket.io" id="apidoc.module.session.socket.io">module session.socket.io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session.socket.io.io" id="apidoc.element.session.socket.io.io">
+        function <span class="apidocSignatureSpan">session.socket.</span>io
+        <span class="apidocSignatureSpan">(io, sessionStore, cookieParser, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SessionSockets(io, sessionStore, cookieParser, key) {
+  key = typeof key === &#x27;undefined&#x27; ? &#x27;connect.sid&#x27; : key;
+  var sessionSockets = this;
+  this.io = io;
+
+  this.on = function(event, callback) {
+    return bind(event, callback, io.sockets);
+  };
+
+  this.of = function(namespace) {
+    return {
+      on: function(event, callback) {
+        return bind(event, callback, io.of(namespace));
+      }
+    };
+  };
+
+  this.getSession = function(socket, callback) {
+    cookieParser(socket.handshake, {}, function (parseErr) {
+      var sessionLookupMethod = sessionStore.load || sessionStore.get;
+      sessionLookupMethod.call(sessionStore, findCookie(socket.handshake), function (storeErr, session) {
+        var err = resolveErr(parseErr, storeErr, session);
+        callback(err, session, socket);
+      });
+    });
+  };
+
+  function bind(event, callback, namespace) {
+    namespace.on(event, function (socket) {
+      sessionSockets.getSession(socket, function (err, session) {
+        callback(err, socket, session);
+      });
+    });
+  }
+
+  function findCookie(handshake) {
+    if (handshake)
+      return (handshake.secureCookies &#x26;&#x26; handshake.secureCookies[key]) ||
+             (handshake.signedCookies &#x26;&#x26; handshake.signedCookies[key]) ||
+             (handshake.cookies &#x26;&#x26; handshake.cookies[key]);
+  }
+
+  function resolveErr(parseErr, storeErr, session) {
+    var err = parseErr || storeErr || null;
+    if (!err &#x26;&#x26; !session) err = new Error(&#x27;Could not lookup session by key: &#x27; + key);
+    return err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
