@@ -1,9 +1,14 @@
-# api documentation for  [session.socket.io (v0.2.1)](https://github.com/functioncallback/session.socket.io)  [![npm package](https://img.shields.io/npm/v/npmdoc-session.socket.io.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-session.socket.io) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-session.socket.io.svg)](https://travis-ci.org/npmdoc/node-npmdoc-session.socket.io)
+# npmdoc-session.socket.io
+
+#### api documentation for  [session.socket.io (v0.2.1)](https://github.com/functioncallback/session.socket.io)  [![npm package](https://img.shields.io/npm/v/npmdoc-session.socket.io.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-session.socket.io) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-session.socket.io.svg)](https://travis-ci.org/npmdoc/node-npmdoc-session.socket.io)
+
 #### Integrate Connect/Express (v3/v4) middleware sessions with socket.io
 
-[![NPM](https://nodei.co/npm/session.socket.io.png?downloads=true)](https://www.npmjs.com/package/session.socket.io)
+[![NPM](https://nodei.co/npm/session.socket.io.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/session.socket.io)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-session.socket.io_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-session.socket.io/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-session.socket.io/build/screenCapture.npmPackageListing.svg)
 
@@ -17,16 +22,14 @@
 
 {
     "author": {
-        "name": "Wagner Camarao",
-        "email": "functioncallback@gmail.com"
+        "name": "Wagner Camarao"
     },
     "bugs": {
         "url": "https://github.com/functioncallback/session.socket.io/issues"
     },
     "contributors": [
         {
-            "name": "Wagner Camarao",
-            "email": "functioncallback@gmail.com"
+            "name": "Wagner Camarao"
         }
     ],
     "dependencies": {},
@@ -48,13 +51,11 @@
     "main": "./session.socket.io.js",
     "maintainers": [
         {
-            "name": "functioncallback",
-            "email": "functioncallback@gmail.com"
+            "name": "functioncallback"
         }
     ],
     "name": "session.socket.io",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/functioncallback/session.socket.io.git"
@@ -63,16 +64,6 @@
     "version": "0.2.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module session.socket.io](#apidoc.module.session.socket.io)
-
-
-
-# <a name="apidoc.module.session.socket.io"></a>[module session.socket.io](#apidoc.module.session.socket.io)
 
 
 
